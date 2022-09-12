@@ -1,0 +1,9 @@
+{
+    "require": {
+        "slim/slim": "3.0",
+        "php-di/php-di": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {"Unow\\": "src/"}
+    }
+}
