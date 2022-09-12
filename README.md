@@ -39,8 +39,8 @@
 ## 👩‍💻 Proyecto explicación
 
 Este proyecto tiene como objetivo exponer 3 endpoints de reservación de citas médicas. Se sigue principios solid, arquitectura hexagonal,
-conceptos que aplican a cualquier framework como Laravel o Symfony.
-
+conceptos que aplican a cualquier framework como Laravel o Symfony. 
+   
 ### 🔨 Arquitectura Hexagonal
 
 Esta estructura de carpetas sigue los principios de arquitectura hexagonal y principios SOLID.
