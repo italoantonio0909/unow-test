@@ -40,9 +40,14 @@ final class ReservationMysqlRepository implements ReservationRepository
     public function reservationTodayMedic(int $medicId): array
     {
         $query = "SELECT * FROM Reservation WHERE medic_id = '$medicId'";
+        $response =  mysqli_query($this->connection, $query);
 
-        mysqli_query($this->connection, $query);
+        $reservations = [];
 
-        return [];
+        while ($row = $response->fetch_assoc()) {
+            $reservations[] = $row;
+        }
+
+        return $reservations;
     }
 }

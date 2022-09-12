@@ -26,11 +26,17 @@ final class UserMysqlRepository implements UserRepository
     public function search(UserEmail $email): null
     {
         $query = "SELECT * FROM User WHERE email = '$email->value()'";
+
         $response = mysqli_query($this->connection, $query);
+
         $results = mysqli_num_rows($response);
+
+        $row = mysqli_fetch_array($response);
 
         if ($results == 0) {
             return null;
         }
+
+        return $row;
     }
 }

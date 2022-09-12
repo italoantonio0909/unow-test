@@ -12,9 +12,3 @@ require_once '/var/www/vendor/autoload.php';
 // while (!feof($myfile)) {
 //     echo fgets($myfile) . "<br>";
 // }
-
-
-
-
-
-// echo "funciona unow test";
