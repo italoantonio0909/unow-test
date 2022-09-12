@@ -20,16 +20,21 @@
 
 1. Instala las dependencias del proyecto utilizando el comando de docker: `docker-compose up -d`
 2. Luego tienes dos puertos disponibles:
-   1. Servidor PHP: http://localhost:80
+   1. Servidor PHP: http://localhost:8080
    2. Gestor PhpMyAdmin: http://localhost:8000
 
 ### ⚙ APIs
 
 ### Usuarios
+  1. http://localhost:8080/v1/contexts/user 
 
-### Médico
+### Médico 
+  2. http://localhost:8080/v1/contexts/medic 
 
 ### Reservación de citas médicas
+   1. http://localhost:8080/v1/contexts/reservations/create 
+   2. http://localhost:8080/v1/contexts/reservations/confirm/:reservationId 
+   3. http://localhost:8080/v1/contexts/reservations/today/:medicId 
 
 ## 👩‍💻 Proyecto explicación
 
