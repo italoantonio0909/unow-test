@@ -23,10 +23,10 @@ final class ReservationCreate
         ReservationDescription $description,
         ReservationStatus $status,
         ReservationUserId $user_id,
-        ReservationMedicId $medic_id,
-        ReservationCreatedAt $created_at
+        ReservationMedicId $medicId,
+        ReservationCreatedAt $createdAt
     ): void {
-        $reservation = Reservation::create($title, $description, $status, $user_id, $medic_id, $created_at);
+        $reservation = Reservation::create($title, $description, $status, $user_id, $medicId, $createdAt);
 
         $this->repository->create($reservation);
     }

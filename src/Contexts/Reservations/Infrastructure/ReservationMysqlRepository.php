@@ -16,17 +16,17 @@ final class ReservationMysqlRepository implements ReservationRepository
     public function create(Reservation $reservation): void
     {
 
-        $reservation_title = $reservation->reservationTitle()->value();
-        $reservation_description = $reservation->reservationDescription()->value();
-        $reservation_status = $reservation->reservationStatus()->value();
-        $reservation_user_id = $reservation->reservationUserId()->value();
-        $reservation_medic_id = $reservation->reservationMedicId()->value();
-        $reservation_created_at = $reservation->reservationCreatedAt()->value();
+        $reservationTitle = $reservation->reservationTitle()->value();
+        $reservationDescription = $reservation->reservationDescription()->value();
+        $reservationStatus = $reservation->reservationStatus()->value();
+        $reservationUserId = $reservation->reservationUserId()->value();
+        $reservationMedicId = $reservation->reservationMedicId()->value();
+        $reservationCreatedAt = $reservation->reservationCreatedAt()->value();
 
         mysqli_query(
             $this->connection,
             "INSERT INTO Reservation (title, description, status, created_at, user_id, medic_id)
-            VALUES ('$reservation_title', '$reservation_description','$reservation_status', '$reservation_created_at', '$reservation_user_id', '$reservation_medic_id')"
+            VALUES ('$reservationTitle', '$reservationDescription','$reservationStatus', '$reservationCreatedAt', '$reservationUserId', '$reservationMedicId')"
         );
     }
 
@@ -39,7 +39,10 @@ final class ReservationMysqlRepository implements ReservationRepository
 
     public function reservationTodayMedic(int $medicId): array
     {
-        $query = "SELECT * FROM Reservation WHERE medic_id = '$medicId'";
+        $query = "
+            SELECT Reservation.title, Reservation.description, DATE_FORMAT(Reservation.created_at, ''%Y-%m-%d'') 
+            FROM Reservation WHERE DATE_FORMAT(Reservation.created_at, '%Y-%m-%d') = CURDATE() AND medic_id = '$medicId'";
+
         $response =  mysqli_query($this->connection, $query);
 
         $reservations = [];

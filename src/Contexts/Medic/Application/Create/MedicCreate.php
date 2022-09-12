@@ -1,6 +1,8 @@
 
 <?php
 
+namespace Unow\Contexts\Medic\Application\Create;
+
 use Unow\Contexts\Medic\Domain\Medic;
 use Unow\Contexts\Medic\Domain\MedicEmail;
 use Unow\Contexts\Medic\Domain\MedicName;

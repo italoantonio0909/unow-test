@@ -9,9 +9,9 @@ final class Reservation
         private readonly ReservationTitle $title,
         private readonly ReservationDescription $description,
         private readonly ReservationStatus $status,
-        private readonly ReservationUserId $user_id,
-        private readonly ReservationMedicId $medic_id,
-        private readonly ReservationCreatedAt $created_at
+        private readonly ReservationUserId $userId,
+        private readonly ReservationMedicId $medicId,
+        private readonly ReservationCreatedAt $createdAt
     ) {
     }
 
@@ -19,11 +19,11 @@ final class Reservation
         ReservationTitle $title,
         ReservationDescription $description,
         ReservationStatus $status,
-        ReservationUserId $user_id,
-        ReservationMedicId $medic_id,
-        ReservationCreatedAt $created_at
+        ReservationUserId $userId,
+        ReservationMedicId $medicId,
+        ReservationCreatedAt $createdAt
     ): self {
-        $reservation = new self($title, $description, $status, $user_id, $medic_id, $created_at);
+        $reservation = new self($title, $description, $status, $userId, $medicId, $createdAt);
 
         return $reservation;
     }

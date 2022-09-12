@@ -6,9 +6,10 @@ namespace Unow;
 
 require_once '/var/www/vendor/autoload.php';
 
-// use Unow\Contexts\User\Domain\User;
+(require_once '../Context/Apps/DependencyInjection')->run();
 
-// $myfile = fopen("../vendor/composer/autoload_psr4.php", "r");
-// while (!feof($myfile)) {
-//     echo fgets($myfile) . "<br>";
-// }
+(require_once '../Context/Apps/User/Routes')();
+
+(require_once '../Context/Apps/Medic/Routes')();
+
+(require_once '../Context/Apps/Reservations/Routes')();

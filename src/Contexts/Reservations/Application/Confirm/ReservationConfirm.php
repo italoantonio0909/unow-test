@@ -11,9 +11,9 @@ final class ReservationConfirm
     {
     }
 
-    public function __invoke(int $reservation_id): void
+    public function __invoke(int $reservationId): void
     {
 
-        $this->repository->confirm($reservation_id);
+        $this->repository->confirm($reservationId);
     }
 }
